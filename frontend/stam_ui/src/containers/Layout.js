@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { Layout, Menu, Breadcrumb } from 'antd';
+import { Layout, Menu, Breadcrumb, Icon} from 'antd';
 
 const { Header, Content, Footer } = Layout;
 
@@ -9,15 +9,15 @@ const { Header, Content, Footer } = Layout;
 const CustomLayout = (props) => {
     return (
         <Layout className="layout">
-            <Header>
+            <Header className>
                 <div className="logo" />
                 <Menu
                     theme="dark"
                     mode="horizontal"
-                    defaultSelectedKeys={['2']}
+                    defaultSelectedKeys={['1']}
                     style={{ lineHeight: '64px' }}
                 >
-                    <Menu.Item key="1">Home</Menu.Item>
+                    <Menu.Item key="1"><Icon type="home" />Home</Menu.Item>
                 </Menu>
             </Header>
             <Content style={{ padding: '0 50px' }}>
