@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework.generics import ListAPIView, RetrieveAPIView
 
 from .models import Shift
-from stam.api.serializers import ShiftSerializer
+from .serializers import ShiftSerializer
 
 
 class ShiftListView(ListAPIView):
