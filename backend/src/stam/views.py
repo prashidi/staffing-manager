@@ -1,3 +1,15 @@
 from django.shortcuts import render
+from rest_framework.generics import ListAPIView, RetrieveAPIView
 
-# Create your views here.
+from .models import Shift
+from stam.api.serializers import ShiftSerializer
+
+
+class ShiftListView(ListAPIView):
+    queryset = Shift.objects.all()
+    serializer_class = ShiftSerializer
+
+class ShiftDetailView(RetrieveAPIView):
+    queryset = Shift.objects.all()
+    serializer_class = ShiftSerializer
+
