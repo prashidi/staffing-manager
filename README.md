@@ -1,0 +1,2 @@
+# staffing-manager
+This is a staffing system management project to easy manage functions, staff and their shift in any eventing company. it also shows how to use Django Rest Framework for backend together with React redux into the frontend 
