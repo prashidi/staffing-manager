@@ -1,5 +1,6 @@
 from django.db import models
 from django.utils import timezone as tz
+from datetime import datetime, timedelta
 
 class Shift(models.Model):
     shift_date = models.DateTimeField()
@@ -9,4 +10,4 @@ class Shift(models.Model):
     created_at = models.DateField(auto_now=True)
 
     def __str__(self):
-        return self.shift_date.strftime('%d/%m/%Y at %H:%M:%S') + ' - ' + self.location
+        return self.shift_date.strftime('%d/%m/%Y') + ' - ' + self.location

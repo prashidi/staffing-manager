@@ -1,6 +1,8 @@
 import React from 'react';
 import axios from 'axios';
+
 import Shifts from '../components/Shifts';
+import CustomForm from '../components/Form';
 
 class ShiftList extends React.Component {
     state = {
@@ -18,7 +20,16 @@ class ShiftList extends React.Component {
 
     render() {
         return (
-            <Shifts data ={ this.state.shifts }/>
+            <div>
+                <Shifts data ={ this.state.shifts }/>
+                <br />
+                <h2>Create a Function</h2>
+                <CustomForm 
+                    requestType="post"
+                    shiftID = {null}
+                    btnTxt = "Create"
+                />
+            </div>
         )
     }
 }

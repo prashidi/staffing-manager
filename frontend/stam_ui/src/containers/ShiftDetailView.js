@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 import { Card, Button } from 'antd';
+import CustomForm from '../components/Form';
 
 class ShiftDetail extends React.Component {
     state = {
@@ -22,12 +23,19 @@ class ShiftDetail extends React.Component {
     render() {
         const size = this.state.size;
         return (
-            <Card title = {this.state.shifts.location}>
-                <p>{this.state.shifts.shift_date}, {this.state.shifts.ss_number} Service staff, { this.state.shifts.bb_number } barman(s) </p>
-                <div>
-                    <Button type="primary" shape="round" icon="check-circle" size={size}>Apply</Button>
-                </div>
-            </Card>
+            <div>
+                <Card title = {this.state.shifts.location}>
+                    <p>{this.state.shifts.shift_date}, {this.state.shifts.ss_number} Service staff, { this.state.shifts.bb_number } barman(s) </p>
+                    <div>
+                        <Button type="primary" shape="round" icon="check-circle" size={size}>Apply</Button>
+                    </div>
+                </Card>
+                <CustomForm 
+                    requestType = "put"
+                    shiftID = {this.props.match.params.shiftID}
+                    btnTxt = "Update"
+                />
+            </div>
         )
     }
 }
