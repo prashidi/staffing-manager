@@ -6,8 +6,8 @@ import ShiftDetail from './containers/ShiftDetailView'
 
 const BaseRouter = () => (
     <div>
-        <Route exact path='/' component={ShiftList} />
-        <Route exact path='/:shiftID' component={ShiftDetail} />
+        <Route exact path='/' component={ShiftList} />{" "}
+        <Route exact path='/:shiftID' component={ShiftDetail} />{" "}
     </div>
 );
 
