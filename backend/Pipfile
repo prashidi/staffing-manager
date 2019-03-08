@@ -8,9 +8,9 @@ verify_ssl = true
 [packages]
 django = "*"
 djangorestframework = "*"
-django-knox = "*"
 python = "*"
 pylint-django = "*"
+django-rest-auth = "*"
 
 [requires]
 python_version = "3.7"
