@@ -1,5 +1,5 @@
 import React from 'react';
-import { NavLink, Link } from 'react-router-dom';
+import { NavLink, Link, withRouter } from 'react-router-dom';
 import { connect } from 'react-redux';
 import * as actions from '../store/actions/auth';
 
@@ -40,7 +40,12 @@ class CustomLayout extends React.Component {
                 <Content style={{ padding: '0 50px' }}>
                     <Breadcrumb style={{ margin: '16px 0' }}>
                         <Breadcrumb.Item><Link to="/">Home</Link></Breadcrumb.Item>
-                        <Breadcrumb.Item><Link to="/">Functions</Link></Breadcrumb.Item>
+                        {
+                            this.props.isAuthenticated ?
+                                <Breadcrumb.Item><Link to="/shifts/">Functions</Link></Breadcrumb.Item>
+                            :
+                            <Breadcrumb.Item></Breadcrumb.Item>
+                        }
                     </Breadcrumb>
                     <div style={{ background: '#fff', padding: 24, minHeight: 280 }}>
                         {this.props.children}
@@ -60,7 +65,7 @@ const mapDispatchToProps = dispatch => {
     }
 }
 
-export default connect(null, mapDispatchToProps)(CustomLayout);
+export default withRouter(connect(null, mapDispatchToProps)(CustomLayout));
 
 
 

@@ -9,7 +9,7 @@ import Signup from './containers/Signup';
 
 const BaseRouter = () => (
     <div>
-        <Route exact path='/' component={ShiftList} />
+        <Route exact path='/shifts/' component={ShiftList} />
         <Route exact path='/shifts/:shiftID' component={ShiftDetail} />
         <Route exact path='/login/' component={Login} />
         <Route exact path='/signup/' component={Signup} />
